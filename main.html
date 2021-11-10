@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- <h1><img src="login.jpg"></h1> -->
+</head>
+<body>
+<center> <h1> Login Page </h1> </center>
+<button onclick="document.getElementById('id01').style.display='block'" style="text-align: center;width: auto;">Login</button>
+
+<div id="id01" class="modal">
+    <form class="modal-content animate" action="action_page.php" method="POST">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" console.log('Hi')></span>
+            <img src="avatar.jpg" class="avatar">
+        </div>
+        <div class="container">
+            <label>Email-Id : </label>
+            <input  type="text" placeholder="Enter email id" id="mail" name="Uname" required> 
+            <label>Password : </label>
+            <input  type="password" placeholder="Password" id="pwd" name="Psd" required> 
+            <button type="submit" onclick="saveValue()"><center>Login</center></button>
+            <input type="checkbox" checked="checked" name="Chk">Remember Me
+            <!-- <button type="button" class="cancelbtn" id="log">Cancel</button>
+            <a href="#">Forgot Password</a> -->
+        </div>  
+        <div class="container" style="background-color: white;">
+         <button type="button" onclick="document.getElementById('id01').style.display='none'"  class="cancelbtn">Cancel</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    function saveValue(){
+      var ename = document.getElementById('mail').value;
+      var pname = document.getElementById('pwd').value;
+      document.write("Your Info : <br>" + "Email : "+ ename + '<br>');
+      document.write('Password : '+ pname + '<br>' )
+    }
+
+</script>
+</body>
+</html>
